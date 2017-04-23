@@ -23,6 +23,13 @@ export default {
 			}
 		},
 		{
+			name: 'example',
+			path: '/example',
+			component:function(resolve){
+				require(['../pages/example.vue'], resolve);
+			}
+		},
+		{
 			path: '*', // 其他页面，强制跳转到登录页面
 			redirect: '/home'
 		}
