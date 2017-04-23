@@ -1,0 +1,55 @@
+/*
+ * 框架样式文件
+ */
+
+.layout-searchList {
+	padding:10px;
+
+	/* 搜索表单 */
+	.search-form {
+		padding:20px 25px;
+		background-color:#ecf0f5;
+
+		.btn-line {
+			margin-top:10px;
+		}
+	}
+
+	.result-list {
+		padding-top:15px;
+
+		h5 {
+			font-size:14px;
+			margin-bottom:12px;
+		}
+	}
+
+	.page-wrapper {
+		padding:10px 15px;
+		text-align:right;
+	}
+
+}
+
+.layout-detail {
+	padding:10px;
+
+	.form-box {
+		padding:10px 15px 5px;
+		margin-bottom:15px;
+
+		&.gray-box {
+			background-color:#ecf0f5;
+		}
+	}
+
+	.subTitle {
+		padding-left:15px;
+		line-height:2;
+		background-color:#dfdfdf;
+	}
+
+
+
+
+}

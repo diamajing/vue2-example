@@ -1,33 +1,34 @@
 <template>
-  <div id="app2">
+  <div id="app">
     <img src="./assets/logo.png">
-    <h1>Hello App!</h1>
-    <firstcomponent></firstcomponent>
-    <ul>
-        <li><router-link to="/first">点我跳转到第一页</router-link></li>
-        <li><router-link to="/second">点我跳转到第二页</router-link></li>
-      </ul>
-    <router-view class="view"></router-view>
+    <h1>Hello App!</h1>    <
+    <router-view></router-view>
+    <loading></loading>
   </div>
 </template>
 
 <script>
-import firstcomponent from './component/firstcomponent.vue'
-import secondcomponent from './component/secondcomponent.vue'
-export default {
-  data () {
-    return {
-      msg: 'Hello Vue!'
+  import resInterceptor from "src/common/interceptor";
+  import Loading from "./components/loading";
+
+  export default {
+    data () {
+      return {
+        msg: 'Hello Vue!'
+      }
+    },
+    name: 'app',
+    components: {
+      Loading
+    },
+    beforeCreate(){
+      resInterceptor(this);	// 拦截器
     }
-  },
-  components: { firstcomponent, secondcomponent }
-}
+  }
 
 
 </script>
 
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
+<style rel="stylesheet/scss" lang="scss">
+  @import "~assets/scss/app.scss";
 </style>

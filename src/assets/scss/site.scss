@@ -1,0 +1,39 @@
+/*
+ * 全站通用样式
+ */
+
+@import "~assets/scss/common/variables.scss";
+@import "~assets/scss/common/mixin.scss";
+
+.iconfont {
+	display:inline-block;
+}
+
+/* 每个tab的锁定菜单栏 */
+.content__locked-menu {
+	&.on{
+		position: fixed;
+		z-index: 2;
+		background-color: white;
+		margin-top: -10px;
+		padding-top: 10px;
+	}
+	padding: 10px;
+	padding-top: 0;
+	position: relative;
+}
+
+.page-wrapper {
+	.content__locked-menu.on{
+		width: calc(100vw - 248px);
+
+		$transition-rule: $transition-speed $transition-fn,
+		width $transition-speed $transition-fn;
+		@include transition-transform($transition-rule);
+	}
+	&.sidebar-mini {
+		.content__locked-menu.on{
+			width: calc(100vw - 100px);
+		}
+	}
+}

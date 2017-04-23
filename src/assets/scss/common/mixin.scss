@@ -1,0 +1,47 @@
+/**
+ * 圆角
+ */
+@mixin border-radius($radius) {
+	border-radius:$radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+
+/**
+ * 上面圆角下面直角
+ */
+@mixin border-top-radius($radius) {
+	border-radius:$radius $radius 0 0;
+	-moz-border-radius: $radius $radius 0 0;
+	-webkit-border-radius: $radius $radius 0 0;
+}
+/**
+ * css3 完全居中
+ */
+@mixin Absolute-center(){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	margin:auto;
+}
+
+@mixin transition-transform($transition) {
+	-webkit-transition: -webkit-transform $transition;
+	-moz-transition: -moz-transform $transition;
+	-o-transition: -o-transform $transition;
+	transition: transform $transition;
+}
+@mixin translate($x, $y) {
+	-webkit-transform: translate($x, $y);
+	-ms-transform: translate($x, $y); // IE9 only
+	-o-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
+@mixin rotate($degrees) {
+	-webkit-transform: rotate($degrees);
+	-ms-transform: rotate($degrees); // IE9 only
+	-o-transform: rotate($degrees);
+	transform: rotate($degrees);
+}

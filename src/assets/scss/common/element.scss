@@ -1,0 +1,140 @@
+/*
+ * 覆盖element中的样式
+ */
+
+.el-form-item {
+	margin-bottom:5px;
+}
+
+.el-form-item__label,
+.el-form-item__content,
+.el-table {
+	font-size:12px;
+}
+
+.el-autocomplete,.el-select {
+	display:block;
+}
+
+.el-date-editor.el-input,
+.el-date-editor--daterange.el-input {
+	width:100%;
+}
+
+.el-button--small {
+	&.wide {
+		padding:7px 25px;
+	}
+}
+.el-form-item__error {
+	//padding-top: 2px;
+	top: -8px;
+	background-color: white;
+	left: 8px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+/* 灰色背景下, form表单验证error, 错误文字显示背景色为灰色 */
+.form-back-gray{
+  .el-form-item__error {
+	background-color: #ecf0f5;
+  }
+}
+/* 登录页, 登录modal 不显示必填项星号  */
+.hide-required {
+	.el-form-item.is-required .el-form-item__label:before {
+		content: '';
+		margin-right: 0;
+	}
+}
+
+.el-table__expanded-cell {
+	padding:0;
+}
+.table-mini-padding {
+	&.el-table {
+		.cell,th>div {
+			padding-left:9px;
+			padding-right:9px;
+		}
+	}
+}
+
+.el-tabs--border-card{
+  box-shadow: 0 0;
+}
+
+.el-dropdown-menu {
+	margin:2px 0;
+	padding:3px 0;
+}
+.el-dropdown-menu__item {
+	font-size:12px;
+	line-height:28px;
+
+	> a {
+		display:block;
+	}
+}
+
+/* debug */
+.el-message__group {
+	line-height:1;
+}
+.el-dialog__wrapper {
+	position:fixed!important;
+}
+
+.el-dialog__header {
+	background-color:#22a0e2;
+	padding:13px 20px;
+}
+.el-dialog__title {
+	color:white;
+}
+.el-dialog__body {
+	padding:30px;
+}
+.el-dialog__close {
+	font-size:14px;
+	color:#dfdfdf;
+
+	&:hover {
+		color:#eee;
+	}
+}
+
+/* 紧凑性dialog样式, 主要表现为footer按钮位置向上移动35px */
+.compact-dialog{
+  .el-dialog__body{
+	padding: 30px 30px 0px 30px;
+  }
+  .el-dialog__footer{
+	padding: 5px 20px 15px;
+  }
+}
+
+/* 表单必填项, 星号位置调整 */
+.el-form-item.is-required .el-form-item__label:before {
+  position: absolute;
+  margin-left: -8px;
+}
+
+
+.quotation-detail-tabs{
+  /* table 中嵌套 form-item 样式修正 */
+  .el-form-item {
+	//margin-bottom: 0px;
+	margin-top: 5px;
+  }
+  /* quotation 三级标题样式 去掉tabs横线显示 */
+  .el-tabs__header{
+	border-bottom: none;
+  }
+}
+
+.el-popover {
+  min-width: 50px;
+}
+

@@ -1,0 +1,36 @@
+/**
+ * 定义变量
+ */
+
+$site-blue:       #097de0 !default;
+$site-lightBlue:  #30ade4 !default;
+
+$site-red:        #f75a53 !default;
+$site-green:      #68ba8a !default;
+$site-yellow:     #fabf00 !default;
+
+$site-black:      #252525 !default;
+$site-gray:       #434343 !default;
+$site-lightGray:  #c2c2c2 !default;
+
+$site-fontSize-title-lg:	20px;
+$site-fontSize-title-md:	18px;
+$site-fontSize-title-sm:	16px;
+$site-fontSize-normal:		14px;
+
+$site-box-bg: #f7f7f7;
+$site-box-border: #dcdcdc;
+
+$danger-color: #f7535a;
+
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+$screen-xs-max: ($screen-sm-min - 1);
+
+$sidebar-width: 208px;
+$sidebar-width-mini: 60px;
+
+$transition-speed: .3s;
+$transition-fn: ease-in-out;//cubic-bezier(0.32,1.25,0.375,1.15);
+
+$sidebar-dark: #324057;
