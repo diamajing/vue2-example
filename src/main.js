@@ -7,21 +7,12 @@ import VueResource from 'vue-resource';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-default/index.css';
 import routerMap from './common/router';
-// import tabRouterMap from './common/tabRouter';
 // import vuexStore from './store/store';
-// import Taber from 'vue-tabs';
 import App from './App';
 
 /* 路由配置 */
 Vue.use(Router);
 const router = new Router(routerMap);
-
-/* tab路由配置 */
-// Vue.use(Taber);
-// const taber = new Taber({
-//   tabs:tabRouterMap,
-//   persist: true
-// });
 
 /* vuex引入 */
 // Vue.use(Vuex);
