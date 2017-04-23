@@ -1,9 +1,12 @@
 <template>
 	<div>
 		<div>Index</div>
-		<p v-if="type==='0'">{{ message }}</p>
-		<p v-else>other</p>
-		<input v-model="type"></input>
+		<p>{{ message }}</p>
+		<ul>
+			<li v-for="todo in arr">
+				{{todo.text}}
+			</li>
+		</ul>
 	</div>
 </template>
 <style>
@@ -14,8 +17,12 @@
 	export default{
 		data(){
 			return {
-				message: 'Hello World!',
-				type : '0'
+				message: 'v-for',
+				arr: [
+					{ text: 'Learn JavaScript' },
+					{ text: 'Learn Vue' },
+					{ text: 'Build something awesome' }
+				]
 			};
 		},
 		components: {}
