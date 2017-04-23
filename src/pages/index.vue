@@ -1,17 +1,20 @@
 <template>
 	<div>
 		<div>Index</div>
+		<p>{{ message }}</p>
+		<input v-model="message"></input>
 	</div>
 </template>
 <style>
 	body {
-		/*background-color: #ff0000;*/
 	}
 </style>
 <script>
 	export default{
 		data(){
-			return {};
+			return {
+				message: 'Hello World!'
+			};
 		},
 		components: {}
 	};
