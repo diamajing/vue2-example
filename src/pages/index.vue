@@ -1,8 +1,9 @@
 <template>
 	<div>
 		<div>Index</div>
-		<p>{{ message }}</p>
-		<input v-model="message"></input>
+		<p v-if="type==='0'">{{ message }}</p>
+		<p v-else>other</p>
+		<input v-model="type"></input>
 	</div>
 </template>
 <style>
@@ -13,7 +14,8 @@
 	export default{
 		data(){
 			return {
-				message: 'Hello World!'
+				message: 'Hello World!',
+				type : '0'
 			};
 		},
 		components: {}
