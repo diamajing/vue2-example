@@ -1,7 +1,6 @@
 <template>
-  <div id="firstcomponent">
-    <h1>I am a component.</h1>
-    <a> written by {{ author }} </a>
+  <div>
+    Component No.{{index}}  title: {{title}}
   </div>
 </template>
 
@@ -9,10 +8,13 @@
 export default {
   data () {
     return {
-      author: "Jinkey"
-    }
+    };
+  },
+  props:{
+    index: Number,
+    title : String
   }
-}
+};
 </script>
 
 <style>
