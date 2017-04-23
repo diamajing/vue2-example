@@ -11,7 +11,6 @@ export default {
 		{
 			name: 'home', // 登录页
 			path: '/home',
-			meta: { auth: false },
 			component:function(resolve){
 				require(['../pages/index.vue'], resolve);
 			}
