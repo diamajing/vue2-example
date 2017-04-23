@@ -12,7 +12,7 @@
 	export default{
 		data(){
 			return {
-				message: 'example',
+				message: 'Hello World!',
 			};
 		},
 		components: {
