@@ -2,6 +2,10 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>Hello App!</h1>
+    <ul>
+      <li><router-link to="/home">跳转到index</router-link></li>
+      <li><router-link to="/dashboard">跳转到dashboard</router-link></li>
+    </ul>
     <router-view></router-view>
     <!--<loading></loading>-->
     <div class="site-version">v{{version}}</div>
