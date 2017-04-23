@@ -1,11 +1,13 @@
 <template>
 	<div class="dashboard">
-		<p>{{ message }}</p>
-		<ul>
-			<li v-for="article in articles">
+		<el-card class="box-card">
+			<div slot="header" class="clearfix">
+				<h1 style="line-height: 36px; color: #20A0FF">{{ message }}</h2>
+			</div>
+			<div v-for="article in articles" class="text item">
 				{{article.title}}
-			</li>
-		</ul>
+			</div>
+		</el-card>
 	</div>
 </template>
 <style>
@@ -46,11 +48,6 @@
 					console.log(response);
 				});
 			},
-			movie1 : function () {
-				movieRes(this).get({"count":"10"}).then(function (data) {
-					this.articles = data.subjects;
-				}.bind(this));
-			}
 		}
 	};
 </script>
