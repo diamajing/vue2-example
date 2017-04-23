@@ -1,10 +1,11 @@
 <template>
-	<div>
+	<div class="dashboard">
 		<div>Dashboard</div>
+		<p>{{ message }}</p>
 	</div>
 </template>
 <style>
-	body {
+	.dashboard {
 		background-color: #00ff00;
 	}
 </style>
@@ -12,7 +13,9 @@
 
 	export default{
 		data(){
-			return {};
+			return {
+				message : "Second."
+			};
 		},
 		components: {}
 	};
