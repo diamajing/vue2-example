@@ -1,14 +1,10 @@
 <template>
 	<div class="home">
-		<p>{{ message }}</p>
-		<el-row>
-			<el-col :span="4">
-				<el-input type="text" v-model="message"/>
-			</el-col>
-			<el-col :span="1">
-				<el-button @click="buttonClick">change</el-button>
-			</el-col>
-		</el-row>
+		<h1>Hello, Vue.js!</h1>
+		<h1 v-if="yes">Yes!</h1>
+		<h1 v-if="no">No!</h1>
+		<h1 v-if="age >= 25">Age: {{ age }}</h1>
+		<h1 v-if="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
 	</div>
 </template>
 <style>
@@ -20,15 +16,15 @@
 	export default{
 		data(){
 			return {
-				message: 'Hello World!',
+				yes: true,
+				no: false,
+				age: 28,
+				name: 'keepfool'
 			};
 		},
 		components: {
 		},
 		methods : {
-			buttonClick : function () {
-				this.message = "Hello, Vue!";
-			}
 		}
 	};
 </script>
