@@ -1,10 +1,14 @@
 <template>
 	<div>
-		<ul class="pagination">
-			<li v-for="n in pageCount">
-				<a href="javascripit:void(0)" v-bind:class="activeNumber === n ? 'active' : ''">{{ n }}</a>
-			</li>
-		</ul>
+		<p><input type="text" v-model="message"></p>
+		<p>
+			<!--click事件直接绑定一个方法-->
+			<button v-on:click="greet">Greet</button>
+		</p>
+		<p>
+			<!--click事件使用内联语句-->
+			<button v-on:click="say('Hi')">Hi</button>
+		</p>
 	</div>
 </template>
 <style>
@@ -16,13 +20,19 @@
 	export default{
 		data(){
 			return {
-				activeNumber: 1,
-				pageCount: 10
+				message: 'Hello, Vue.js!'
 			};
 		},
 		components: {
 		},
-		methods : {
+		methods: {
+			greet: function() {
+				// // 方法内 `this` 指向 vm
+				this.message = 'greet';
+			},
+			say: function(msg) {
+				this.message = msg;
+			}
 		}
 	};
 </script>
