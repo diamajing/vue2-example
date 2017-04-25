@@ -1,10 +1,21 @@
 <template>
-	<div class="home">
-		<h1>Hello, Vue.js!</h1>
-		<h1 v-show="yes">Yes!</h1>
-		<h1 v-show="no">No!</h1>
-		<h1 v-show="age >= 25">Age: {{ age }}</h1>
-		<h1 v-show="name.indexOf('keep') >= 0">Name: {{ name }}</h1>
+	<div>
+		<table>
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Sex</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr v-for="person in people">
+				<td>{{ person.name  }}</td>
+				<td>{{ person.age  }}</td>
+				<td>{{ person.sex  }}</td>
+			</tr>
+			</tbody>
+		</table>
 	</div>
 </template>
 <style>
@@ -16,10 +27,23 @@
 	export default{
 		data(){
 			return {
-				yes: true,
-				no: false,
-				age: 24,
-				name: 'keepfool'
+				people: [{
+					name: 'Jack',
+					age: 30,
+					sex: 'Male'
+				}, {
+					name: 'Bill',
+					age: 26,
+					sex: 'Male'
+				}, {
+					name: 'Tracy',
+					age: 22,
+					sex: 'Female'
+				}, {
+					name: 'Chris',
+					age: 36,
+					sex: 'Male'
+				}]
 			};
 		},
 		components: {
