@@ -1,14 +1,47 @@
 <template>
 	<div>
-		<p><input type="text" v-model="message"></p>
-		<p>
-			<!--click事件直接绑定一个方法-->
-			<button v-on:click="greet">Greet</button>
-		</p>
-		<p>
-			<!--click事件使用内联语句-->
-			<button v-on:click="say('Hi')">Hi</button>
-		</p>
+		<fieldset>
+			<legend>
+				Create New Person
+			</legend>
+			<div class="form-group">
+				<label>Name:</label>
+				<input type="text" v-model="newPerson.name"/>
+			</div>
+			<div class="form-group">
+				<label>Age:</label>
+				<input type="text" v-model="newPerson.age"/>
+			</div>
+			<div class="form-group">
+				<label>Sex:</label>
+				<select v-model="newPerson.sex">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label></label>
+				<button @click="createPerson">Create</button>
+			</div>
+		</fieldset>
+		<table>
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Sex</th>
+				<th>Delete</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr v-for="(person,$index) in people">
+				<td>{{ person.name }}</td>
+				<td>{{ person.age }}</td>
+				<td>{{ person.sex }}</td>
+				<td :class="'text-center'"><button @click="deletePerson($index)">Delete</button></td>
+			</tr>
+			</tbody>
+		</table>
 	</div>
 </template>
 <style>
@@ -20,18 +53,41 @@
 	export default{
 		data(){
 			return {
-				message: 'Hello, Vue.js!'
+				newPerson: {
+					name: '',
+					age: 0,
+					sex: 'Male'
+				},
+				people: [{
+					name: 'Jack',
+					age: 30,
+					sex: 'Male'
+				}, {
+					name: 'Bill',
+					age: 26,
+					sex: 'Male'
+				}, {
+					name: 'Tracy',
+					age: 22,
+					sex: 'Female'
+				}, {
+					name: 'Chris',
+					age: 36,
+					sex: 'Male'
+				}]
 			};
 		},
 		components: {
 		},
 		methods: {
-			greet: function() {
-				// // 方法内 `this` 指向 vm
-				this.message = 'greet';
+			createPerson: function(){
+				this.people.push(this.newPerson);
+				// 添加完newPerson对象后，重置newPerson对象
+				this.newPerson = {name: '', age: 0, sex: 'Male'};
 			},
-			say: function(msg) {
-				this.message = msg;
+			deletePerson: function(index){
+				// 删一个数组元素
+				this.people.splice(index,1);
 			}
 		}
 	};
